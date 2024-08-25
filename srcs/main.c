@@ -6,7 +6,7 @@
 /*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:16:02 by ghoyaux           #+#    #+#             */
-/*   Updated: 2024/08/25 22:02:39 by ghoyaux          ###   ########.fr       */
+/*   Updated: 2024/08/25 22:27:12 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,9 @@ int	main(int argc, char **argv)
 	s_out = NULL;
 	if (argc == 2)
 	{
-		write(1, "a", sizeof(char));
 		if (ft_dic(&s_out, DEFAULT_DICT) == 0)
 			return (0);
-		write(1, "b", sizeof(char));
 		element = ft_find(s_out, argv[1]);
-		printf("\n%s", element);
 	}
 	else if (argc == 3)
 	{
@@ -33,7 +30,8 @@ int	main(int argc, char **argv)
 		if (ft_dic(&s_out, argv[2]) == 0)
 			return (0);
 		element = ft_find(s_out, argv[1]);
-		printf("\n%s", element);
+		write(1, element, (ft_strlen(element) * sizeof(char)));
+		write(1, "\n", sizeof(char));
 	}
 	else
 	{

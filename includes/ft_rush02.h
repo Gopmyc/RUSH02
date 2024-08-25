@@ -6,7 +6,7 @@
 /*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:16:07 by ghoyaux           #+#    #+#             */
-/*   Updated: 2024/08/25 22:02:01 by ghoyaux          ###   ########.fr       */
+/*   Updated: 2024/08/25 22:17:05 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void		ft_free_all(t_dict_array *s_out);
 char		*ft_strcpy(char *dest, char *src);
 char		*ft_int_to_char(int nb);
 int			chartype(char let);
+int			ft_compare_string(char *s1, char *s2);
 
 /* Declaration of functions errors.c */
 void		ft_write_errors(int code);
