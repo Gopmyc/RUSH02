@@ -30,7 +30,7 @@ int		ft_is_digit(char *str);
 int		ft_get_sign(char *str);
 int		ft_convert_char(char *str);
 int		ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
+int		chartype(char let);
 
 /* Declaration of functions base.c */
 char	*ft_find_element(char i, struct s_dict_array *file);

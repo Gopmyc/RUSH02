@@ -6,7 +6,7 @@
 /*   By: ladurand <ladurand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 20:23:07 by ladurand          #+#    #+#             */
-/*   Updated: 2024/08/25 19:58:58 by ladurand         ###   ########.fr       */
+/*   Updated: 2024/08/25 21:00:02 by ladurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	ft_dic(t_dict_array **s_out, char *dic_name)
 		return (0);
 	return (1);
 }
-
+/* 
 int	main(void)
 {
 	t_dict_array	*s_out;
@@ -125,3 +125,4 @@ int	main(void)
 	}
 	free(s_out);
 }
+ */
