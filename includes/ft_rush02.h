@@ -13,11 +13,11 @@
 /* Fonctions autorisee : write, malloc, free, open, read, close */
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct s_dict_array
 {
-	int		size;
 	int		*numbers;
 	char	*letters;
 }	t_dict_array;
@@ -30,3 +30,7 @@ int	ft_is_digit(char *str);
 int	ft_get_sign(char *str);
 int	ft_convert_char(char *str);
 int	ft_strlen(char *str);
+int		chartype(char let);
+int		ft_dic_fill(int s_in, t_dict_array *s_out, char *dic_name);
+int		ft_dic_check(int s_in);
+
