@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   base.c                                             :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 16:57:27 by ghoyaux           #+#    #+#             */
-/*   Updated: 2024/08/25 20:42:57 by ghoyaux          ###   ########.fr       */
+/*   Created: 2024/08/25 20:27:34 by ghoyaux           #+#    #+#             */
+/*   Updated: 2024/08/25 20:30:18 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_rush02.h"
-
-char	*ft_find_element(char i, struct s_dict_array *file)
+char	ft_int_to_char(int nb)
 {
-	int long	index;
+	char	c;
 
-	index = 0;
-	while (file[index].letters != NULL)
+	if (nb == -2147483648)
 	{
-		if (ft_strcmp(file[index].numbers, i))
-			break ;
-		index++;
+		c = "-2147483648";
+		return (c);
 	}
-	retrun(file[index].letters);
+	else
+	{
+		if (nb < 0)
+		{
+			write(1, "-", 1);
+			nb = -nb;
+		}
+		if (nb >= 10)
+			ft_putnbr(nb / 10);
+		c = nb % 10 + '0';
+		return (c);
+	}
 }

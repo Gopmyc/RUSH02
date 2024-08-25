@@ -6,7 +6,7 @@
 /*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:36:00 by ghoyaux           #+#    #+#             */
-/*   Updated: 2024/08/24 15:51:56 by ghoyaux          ###   ########.fr       */
+/*   Updated: 2024/08/25 20:24:24 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,21 @@ int	ft_strlen(char *str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int		diff;
+	int		i;
+
+	diff = 0;
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		diff = s1[i] - s2[i];
+		if (diff != 0)
+			return (diff);
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }
