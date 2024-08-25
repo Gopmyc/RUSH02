@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dic_con.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ladurand <ladurand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ghoyaux <ghoyaux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 20:23:07 by ladurand          #+#    #+#             */
-/*   Updated: 2024/08/25 21:00:02 by ladurand         ###   ########.fr       */
+/*   Updated: 2024/08/25 21:20:31 by ghoyaux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,31 +98,3 @@ int	ft_dic(t_dict_array **s_out, char *dic_name)
 		return (0);
 	return (1);
 }
-/* 
-int	main(void)
-{
-	t_dict_array	*s_out;
-	char			*dic_name;
-	int				i;
-
-	s_out = NULL;
-	i = 0;
-	dic_name = "numbers.dict";
-	if (ft_dic(&s_out, dic_name) == 0)
-		return (0);
-	while (s_out[i].numbers[0] != '\0')
-	{
-		printf("\n%s", s_out[i].numbers);
-		printf("\n%s", s_out[i].letters);
-		i++;
-	}
-	while (s_out[i].numbers[0] != '\0')
-	{
-		write(1, "Bonjour", 7);
-		free(s_out[i].numbers);
-		free(s_out[i].letters);
-		i++;
-	}
-	free(s_out);
-}
- */

@@ -12,7 +12,7 @@ OBJS = $(SRCS:$(SRC_EXT)=$(OBJ_EXT))
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -I $(INC_DIR)
+CFLAGS = -Wall -Wextra -Werror -g -I $(INC_DIR)
 
 $(NAME): $(OBJS)
 	@echo "Compiling $(NAME)..."

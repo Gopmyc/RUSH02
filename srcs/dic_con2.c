@@ -6,7 +6,7 @@
 /*   By: ladurand <ladurand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 19:51:13 by ladurand          #+#    #+#             */
-/*   Updated: 2024/08/25 21:00:09 by ladurand         ###   ########.fr       */
+/*   Updated: 2024/08/25 19:58:40 by ladurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 int	ft_dic_check2(char i_char, int s_in, int nb_num, int sep)
 {
 	int	nb_name;
-	int	is_empty;
 
-	is_empty = 0;
 	nb_name = 0;
-	if (i_char == '\n')
-		is_empty = 1;
+	while (chartype(i_char) == 4)
+	{
+		read(s_in, &i_char, 1);
+		nb_num++;
+	}
 	while (i_char == ' ')
 		read(s_in, &i_char, 1);
 	if (chartype(i_char) == 2)
@@ -35,7 +36,7 @@ int	ft_dic_check2(char i_char, int s_in, int nb_num, int sep)
 	}
 	if (i_char == '\n')
 		sep++;
-	if ((nb_num <= 0 || sep != 2 || nb_name <= 0) && is_empty == 0)
+	if (nb_num <= 0 || sep != 2 || nb_name <= 0)
 		return (0);
 	return (1);
 }
@@ -52,11 +53,6 @@ int	ft_dic_check(int s_in)
 	{
 		nb_num = 0;
 		sep = 0;
-		while (chartype(i_char) == 4)
-		{
-			read(s_in, &i_char, 1);
-			nb_num++;
-		}
 		if (ft_dic_check2(i_char, s_in, nb_num, sep) == 0)
 			return (0);
 		nb_lignes++;
@@ -100,11 +96,8 @@ int	ft_dic_fill(int s_in, t_dict_array *s_out, char *dic_name)
 		return (0);
 	while (read(file, &i_char, 1) > 0)
 	{
-		if (i_char != '\n')
-		{
-			ft_dic_fill2(i_char, i, file, s_out);
-			i++;
-		}
+		ft_dic_fill2(i_char, i, file, s_out);
+		i++;
 	}
 	return (1);
 }

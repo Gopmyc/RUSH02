@@ -79,16 +79,19 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	chartype(char let)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if (let < 31 || let == 127)
-		return (1);
-	else if (let == 58)
-		return (2);
-	else if (let == 32)
-		return (3);
-	else if (let > 47 && let < 58)
-		return (4);
-	return (0);
-}
+	int		diff;
+	int		i;
 
+	diff = 0;
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		diff = s1[i] - s2[i];
+		if (diff != 0)
+			return (diff);
+		i++;
+	}
+	return (s1[i] - s2[i]);
+}
